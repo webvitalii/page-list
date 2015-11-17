@@ -9,11 +9,12 @@ Author URI: http://web-profile.com.ua/wordpress/plugins/
 License: GPLv3
 */
 
-define('PAGE_LIST_VERSION', '5.1');
+define('PAGE_LIST_PLUGIN_VERSION', '5.1');
+define('PAGE_LIST_VERSION', PAGE_LIST_PLUGIN_VERSION); // deprecated
 
 $pagelist_unq_settings = array(
-	'version' => PAGE_LIST_VERSION,
-	'powered_by' => "\n".'<!-- Page-list plugin v.'.PAGE_LIST_VERSION.' wordpress.org/plugins/page-list/ -->'."\n",
+	'version' => PAGE_LIST_PLUGIN_VERSION,
+	'powered_by' => "\n".'<!-- Page-list plugin v.'.PAGE_LIST_PLUGIN_VERSION.' wordpress.org/plugins/page-list/ -->'."\n",
 	'page_list_defaults' => array(
 		'depth' => '0',
 		'child_of' => '0',
@@ -41,7 +42,7 @@ $pagelist_unq_settings = array(
 
 if ( !function_exists('pagelist_unqprfx_add_stylesheet') ) {
 	function pagelist_unqprfx_add_stylesheet() {
-		wp_enqueue_style( 'page-list-style', plugins_url( '/css/page-list.css', __FILE__ ), false, PAGE_LIST_VERSION, 'all' );
+		wp_enqueue_style( 'page-list-style', plugins_url( '/css/page-list.css', __FILE__ ), false, PAGE_LIST_PLUGIN_VERSION, 'all' );
 	}
 	add_action('wp_enqueue_scripts', 'pagelist_unqprfx_add_stylesheet');
 }
@@ -482,7 +483,7 @@ if ( !function_exists('pagelist_unqprfx_get_first_image') ) {
 
 if ( ! function_exists('pagelist_unqprfx_plugin_meta') ) {
 	function pagelist_unqprfx_plugin_meta( $links, $file ) { // add 'Plugin page' and 'Donate' links to plugin meta row
-		if ( strpos( $file, 'page-list.php' ) !== false ) {
+		if ( strpos( $file, 'page-list/page-list.php' ) !== false ) {
 			$links = array_merge( $links, array( '<a href="http://web-profile.com.ua/wordpress/plugins/page-list/" title="Plugin page">Page-list</a>' ) );
 			$links = array_merge( $links, array( '<a href="http://web-profile.com.ua/donate/" title="Support the development">Donate</a>' ) );
 			$links = array_merge( $links, array( '<a href="http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitaly">WordPress Pro plugins</a>' ) );
