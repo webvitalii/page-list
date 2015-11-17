@@ -15,7 +15,8 @@ License URI: http://www.gnu.org/licenses/gpl.html
 > **[WordPress Pro plugins](http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitaly)** |
 > **[Page-list](http://web-profile.com.ua/wordpress/plugins/page-list/ "Plugin page")** |
 > **[all Page-list params](http://wordpress.org/plugins/page-list/other_notes/ "Page-list params")** |
-> **[Donate](http://web-profile.com.ua/donate/ "Support the development")**
+> **[Donate](http://web-profile.com.ua/donate/ "Support the development")** |
+> **[Github](https://github.com/webvitaly/page-list "Fork")**
 
 = shortcodes: =
 
