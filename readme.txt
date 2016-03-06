@@ -3,7 +3,7 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: page, page-list, pagelist, sitemap, subpages, siblings
 Requires at least: 3.0
-Tested up to: 4.4
+Tested up to: 4.7
 Stable tag: 5.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -12,11 +12,11 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 == Description ==
 
-> **[WordPress Pro plugins](http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitaly)** |
+> **[WordPress Pro plugins](http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitalii "WordPress Pro plugins")** |
 > **[Page-list](http://web-profile.com.ua/wordpress/plugins/page-list/ "Plugin page")** |
 > **[all Page-list params](http://wordpress.org/plugins/page-list/other_notes/ "Page-list params")** |
 > **[Donate](http://web-profile.com.ua/donate/ "Support the development")** |
-> **[Github](https://github.com/webvitaly/page-list "Fork")**
+> **[GitHub](https://github.com/webvitalii/page-list "Fork")**
 
 = shortcodes: =
 
@@ -32,9 +32,9 @@ License URI: http://www.gnu.org/licenses/gpl.html
 * **[all Page-list params](http://wordpress.org/plugins/page-list/other_notes/ "Page-list params")**
 
 = Useful: =
-* ["Anti-spam" - block spam in comments](http://wordpress.org/plugins/anti-spam/ "no spam, no captcha")
-* ["Iframe" - embed iframe with shortcode](http://wordpress.org/plugins/iframe/ "embed iframe")
-* [WordPress Pro plugins](http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitaly)
+* [Anti-spam - block spam in comments](http://wordpress.org/plugins/anti-spam/ "no spam, no captcha")
+* [Iframe - embed iframe with shortcode](http://wordpress.org/plugins/iframe/ "embed iframe")
+* [WordPress Pro plugins](http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitalii "WordPress Pro plugins")
 
 == Other Notes ==
 

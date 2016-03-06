@@ -482,13 +482,16 @@ if ( !function_exists('pagelist_unqprfx_get_first_image') ) {
 }
 
 if ( ! function_exists('pagelist_unqprfx_plugin_meta') ) {
-	function pagelist_unqprfx_plugin_meta( $links, $file ) { // add 'Plugin page' and 'Donate' links to plugin meta row
-		if ( strpos( $file, 'page-list/page-list.php' ) !== false ) {
-			$links = array_merge( $links, array( '<a href="http://web-profile.com.ua/wordpress/plugins/page-list/" title="Plugin page">Page-list</a>' ) );
-			$links = array_merge( $links, array( '<a href="http://web-profile.com.ua/donate/" title="Support the development">Donate</a>' ) );
-			$links = array_merge( $links, array( '<a href="http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitaly">WordPress Pro plugins</a>' ) );
+	function pagelist_unqprfx_plugin_meta( $links, $file ) { // add links to plugin meta row
+		if ( $file == plugin_basename( __FILE__ ) ) {
+			$row_meta = array(
+				'support' => '<a href="http://web-profile.com.ua/wordpress/plugins/page-list/" target="_blank"><span class="dashicons dashicons-editor-help"></span> ' . __( 'Page-list', 'page-list' ) . '</a>',
+				'donate' => '<a href="http://web-profile.com.ua/donate/" target="_blank"><span class="dashicons dashicons-heart"></span> ' . __( 'Donate', 'page-list' ) . '</a>',
+				'pro' => '<a href="http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitalii" target="_blank"><span class="dashicons dashicons-star-filled"></span> ' . __( 'Pro Plugins', 'page-list' ) . '</a>'
+			);
+			$links = array_merge( $links, $row_meta );
 		}
-		return $links;
+		return (array) $links;
 	}
 	add_filter( 'plugin_row_meta', 'pagelist_unqprfx_plugin_meta', 10, 2 );
 }
