@@ -487,7 +487,7 @@ if ( ! function_exists('pagelist_unqprfx_plugin_meta') ) {
 			$row_meta = array(
 				'support' => '<a href="http://web-profile.com.ua/wordpress/plugins/page-list/" target="_blank"><span class="dashicons dashicons-editor-help"></span> ' . __( 'Page-list', 'page-list' ) . '</a>',
 				'donate' => '<a href="http://web-profile.com.ua/donate/" target="_blank"><span class="dashicons dashicons-heart"></span> ' . __( 'Donate', 'page-list' ) . '</a>',
-				'pro' => '<a href="http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitalii" target="_blank"><span class="dashicons dashicons-star-filled"></span> ' . __( 'Pro Plugins', 'page-list' ) . '</a>'
+				'pro' => '<a href="http://codecanyon.net/item/antispam-pro/6491169?ref=webvitalii" target="_blank" title="Speedup and protect WordPress in a smart way"><span class="dashicons dashicons-star-filled"></span> ' . __( 'Silver Bullet Pro', 'page-list' ) . '</a>'
 			);
 			$links = array_merge( $links, $row_meta );
 		}
