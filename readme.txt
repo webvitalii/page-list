@@ -12,7 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 == Description ==
 
-> **[Silver Bullet Pro](http://codecanyon.net/item/silver-bullet-pro/edit/15171769?ref=webvitalii "Speedup and protect WordPress in a smart way")** |
+> **[Silver Bullet Pro](http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii "Speedup and protect WordPress in a smart way")** |
 > **[Page-list](http://web-profile.com.ua/wordpress/plugins/page-list/ "Plugin page")** |
 > **[all Page-list params](http://wordpress.org/plugins/page-list/other_notes/ "Page-list params")** |
 > **[Donate](http://web-profile.com.ua/donate/ "Support the development")** |
@@ -32,7 +32,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 * **[all Page-list params](http://wordpress.org/plugins/page-list/other_notes/ "Page-list params")**
 
 = Useful: =
-* **[Silver Bullet Pro - Speedup and protect WordPress in a smart way](http://codecanyon.net/item/silver-bullet-pro/edit/15171769?ref=webvitalii "Speedup and protect WordPress in a smart way")**
+* **[Silver Bullet Pro - Speedup and protect WordPress in a smart way](http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii "Speedup and protect WordPress in a smart way")**
 * **[Anti-spam Pro - Block spam in comments](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitalii "Block spam in comments")**
 
 
