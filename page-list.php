@@ -5,12 +5,12 @@ Plugin URI: http://wordpress.org/plugins/page-list/
 Description: [pagelist], [subpages], [siblings] and [pagelist_ext] shortcodes
 Version: 5.1
 Author: webvitaly
+Text Domain: page-list
 Author URI: http://web-profile.com.ua/wordpress/plugins/
 License: GPLv3
 */
 
 define('PAGE_LIST_PLUGIN_VERSION', '5.1');
-define('PAGE_LIST_VERSION', PAGE_LIST_PLUGIN_VERSION); // deprecated
 
 $pagelist_unq_settings = array(
 	'version' => PAGE_LIST_PLUGIN_VERSION,
@@ -482,7 +482,7 @@ if ( !function_exists('pagelist_unqprfx_get_first_image') ) {
 }
 
 if ( ! function_exists('pagelist_unqprfx_plugin_meta') ) {
-	function pagelist_unqprfx_plugin_meta( $links, $file ) { // add links to plugin meta row
+	function pagelist_unqprfx_plugin_meta( $links, $file ) {
 		if ( $file == plugin_basename( __FILE__ ) ) {
 			$row_meta = array(
 				'support' => '<a href="http://web-profile.com.ua/wordpress/plugins/page-list/" target="_blank"><span class="dashicons dashicons-editor-help"></span> ' . __( 'Page-list', 'page-list' ) . '</a>',
