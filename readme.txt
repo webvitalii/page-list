@@ -1,9 +1,9 @@
 === Page-list ===
 Contributors: webvitaly
-Donate link: http://web-profile.com.ua/donate/
+Donate link: http://web-profile.net/donate/
 Tags: page, page-list, pagelist, sitemap, subpages, siblings
 Requires at least: 3.0
-Tested up to: 4.7
+Tested up to: 5.0
 Stable tag: 5.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -13,9 +13,9 @@ License URI: http://www.gnu.org/licenses/gpl.html
 == Description ==
 
 > **[Silver Bullet Pro](http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii "Speedup and protect WordPress in a smart way")** |
-> **[Page-list](http://web-profile.com.ua/wordpress/plugins/page-list/ "Plugin page")** |
+> **[Page-list](http://web-profile.net/wordpress/plugins/page-list/ "Plugin page")** |
 > **[all Page-list params](http://wordpress.org/plugins/page-list/other_notes/ "Page-list params")** |
-> **[Donate](http://web-profile.com.ua/donate/ "Support the development")** |
+> **[Donate](http://web-profile.net/donate/ "Support the development")** |
 > **[GitHub](https://github.com/webvitalii/page-list "Fork")**
 
 = shortcodes: =
@@ -119,7 +119,7 @@ Shortcodes [pagelist], [subpages] and [siblings] accept the same parameters. The
 To create sitemap.xml you can use [Google XML Sitemaps](http://wordpress.org/plugins/google-sitemap-generator/) plugin.
 
 = Is there "more-link" feature in the plugin? =
-No, there is no "more-link" feature in the plugin. Because "[more-link](http://web-profile.com.ua/web/web-principles/more-link/ "do not use more-link")":
+No, there is no "more-link" feature in the plugin. Because "[more-link](http://web-profile.net/web/web-principles/more-link/ "do not use more-link")":
 
 * **bad for SEO.** Nobody will search your site with the word "more". "rel=nofollow" will not solve it too.
 * **bad for usability.** There is already link on title and "more-link" is an extra no needed element on page. If user cannot understand that the title is the link, than there is a problem in css styles and not in plugin's templates.

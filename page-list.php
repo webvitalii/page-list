@@ -5,8 +5,7 @@ Plugin URI: http://wordpress.org/plugins/page-list/
 Description: [pagelist], [subpages], [siblings] and [pagelist_ext] shortcodes
 Version: 5.1
 Author: webvitaly
-Text Domain: page-list
-Author URI: http://web-profile.com.ua/wordpress/plugins/
+Author URI: http://web-profile.net/wordpress/plugins/
 License: GPLv3
 */
 
@@ -482,12 +481,12 @@ if ( !function_exists('pagelist_unqprfx_get_first_image') ) {
 }
 
 if ( ! function_exists('pagelist_unqprfx_plugin_meta') ) {
-	function pagelist_unqprfx_plugin_meta( $links, $file ) {
+	function pagelist_unqprfx_plugin_meta( $links, $file ) { // add links to plugin meta row
 		if ( $file == plugin_basename( __FILE__ ) ) {
 			$row_meta = array(
-				'support' => '<a href="http://web-profile.com.ua/wordpress/plugins/page-list/" target="_blank"><span class="dashicons dashicons-editor-help"></span> ' . __( 'Page-list', 'page-list' ) . '</a>',
-				'donate' => '<a href="http://web-profile.com.ua/donate/" target="_blank"><span class="dashicons dashicons-heart"></span> ' . __( 'Donate', 'page-list' ) . '</a>',
-				'pro' => '<a href="http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii" target="_blank" title="Speedup and protect WordPress in a smart way"><span class="dashicons dashicons-star-filled"></span> ' . __( 'Silver Bullet Pro', 'page-list' ) . '</a>'
+				'support' => '<a href="http://web-profile.net/wordpress/plugins/page-list/" target="_blank"><span class="dashicons dashicons-editor-help"></span> ' . __( 'Page-list', 'page-list' ) . '</a>',
+				'donate' => '<a href="http://web-profile.net/donate/" target="_blank"><span class="dashicons dashicons-heart"></span> ' . __( 'Donate', 'page-list' ) . '</a>',
+				'pro' => '<a href="http://codecanyon.net/item/antispam-pro/6491169?ref=webvitalii" target="_blank" title="Speedup and protect WordPress in a smart way"><span class="dashicons dashicons-star-filled"></span> ' . __( 'Silver Bullet Pro', 'page-list' ) . '</a>'
 			);
 			$links = array_merge( $links, $row_meta );
 		}
