@@ -3,7 +3,7 @@ Contributors: webvitaly
 Donate link: http://web-profile.net/donate/
 Tags: page, page-list, pagelist, sitemap, subpages, siblings
 Requires at least: 3.0
-Tested up to: 5.0
+Tested up to: 5.2
 Stable tag: 5.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -12,11 +12,11 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 == Description ==
 
-> **[Silver Bullet Pro](http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii "Speedup and protect WordPress in a smart way")** |
-> **[Page-list](http://web-profile.net/wordpress/plugins/page-list/ "Plugin page")** |
-> **[all Page-list params](http://wordpress.org/plugins/page-list/other_notes/ "Page-list params")** |
-> **[Donate](http://web-profile.net/donate/ "Support the development")** |
-> **[GitHub](https://github.com/webvitalii/page-list "Fork")**
+* **[Anti-spam Pro - Block spam in comments](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitalii "Block spam in comments")**
+* **[Page-list](http://web-profile.net/wordpress/plugins/page-list/ "Plugin page")**
+* **[all Page-list params](http://wordpress.org/plugins/page-list/other_notes/ "Page-list params")**
+* **[Donate](http://web-profile.net/donate/ "Support the development")**
+* **[GitHub](https://github.com/webvitalii/page-list "Fork")**
 
 = shortcodes: =
 
@@ -30,10 +30,6 @@ License URI: http://www.gnu.org/licenses/gpl.html
 * `[pagelist child_of="4" depth="2" exclude="6,7,8"]`
 * `[pagelist_ext child_of="4" exclude="6,7,8" image_width="50" image_height="50"]`
 * **[all Page-list params](http://wordpress.org/plugins/page-list/other_notes/ "Page-list params")**
-
-= Useful: =
-* **[Silver Bullet Pro - Speedup and protect WordPress in a smart way](http://codecanyon.net/item/silver-bullet-pro/15171769?ref=webvitalii "Speedup and protect WordPress in a smart way")**
-* **[Anti-spam Pro - Block spam in comments](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitalii "Block spam in comments")**
 
 
 == Other Notes ==
@@ -134,25 +130,25 @@ When you changed the plugin's code you should also change the plugin's version t
 
 == Changelog ==
 
-= 5.1 - 2015.07.01 =
+= 5.1 =
 * added columns feature
 
-= 5.0 - 2015.01.25 =
+= 5.0 =
 * code refactoring
 * update docs
 * added 'authors', 'post_type', 'post_status', 'date_format' params to [pagelist], [subpages], [siblings] shortcodes (thanks to Nick Ciske)
 
-= 4.3 - 2015.01.15 =
+= 4.3 =
 * use wp_enqueue_scripts hook instead of wp_print_styles to enqueue scripts and styles (thanks to sireneweb)
 
-= 4.2 - 2013.02.16 =
+= 4.2 =
 * fix in css styles (clearfix added to .page-list-ext)
 * make default image size 150x150 like default thumbnail size
 
-= 4.1 - 2013.01.27 =
+= 4.1 =
 * change the type of output the image thumbnail in [pagelist_ext] shortcode
 
-= 4.0 - 2012.10.30 =
+= 4.0 =
 * remove conflict between Pagelist and Sitemap plugins
 * remove preg_match_all notice
 * minor changes
