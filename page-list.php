@@ -34,6 +34,7 @@ $pagelist_unq_settings = array(
 		'link_after' => '',
 		'post_type' => 'page',
 		'post_status' => 'publish',
+		'if_empty' => '<!-- no pages to show -->',//w
 		'class' => ''
 	)
 );
@@ -118,6 +119,7 @@ if ( !function_exists('subpages_unqprfx_shortcode') ) {
 			'link_before'  => $link_before,
 			'link_after'   => $link_after,
 			'post_type'    => $post_type,
+			'if_empty'	   => $if_empty, //w
 			'post_status'  => $post_status
 		);
 		$list_pages = wp_list_pages( $page_list_args );
@@ -126,7 +128,14 @@ if ( !function_exists('subpages_unqprfx_shortcode') ) {
 		if ($list_pages) {
 			$return .= '<ul class="page-list subpages-page-list '.$class.'">'."\n".$list_pages."\n".'</ul>';
 		} else {
-			$return .= '<!-- no pages to show -->';
+			//ws
+			if ( $if_empty == 'siblings' ) {
+				$return .= do_shortcode('[siblings]');
+			}
+			else {
+				$return = $if_empty;
+			}
+			//we
 		}
 		return $return;
 	}
