@@ -12,7 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 == Description ==
 
-* **[Anti-spam Pro - Block spam in comments](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitalii "Block spam in comments")**
+* **[Advanced iFrame Pro](https://1.envato.market/KdRNz "Advanced iFrame Pro")**
 * **[Page-list](http://web-profile.net/wordpress/plugins/page-list/ "Plugin page")**
 * **[all Page-list params](http://wordpress.org/plugins/page-list/other_notes/ "Page-list params")**
 * **[Donate](http://web-profile.net/donate/ "Support the development")**
