@@ -368,7 +368,7 @@ if ( !function_exists('pagelist_unqprfx_ext_shortcode') ) {
 							}
 						}
 						if ( $show_meta_key != '' ) {
-							$post_meta = get_post_meta($page->ID, $show_meta_key, true);
+							$post_meta = do_shortcode(get_post_meta($page->ID, $show_meta_key, true));
 							if ( !empty($post_meta) ) { // hide empty
 								$meta_pos = strpos($meta_template, '%meta%'); // check if we have %meta% marker in template
 								if ($meta_pos === false) { // %meta% not found in template
