@@ -241,7 +241,7 @@ if ( !function_exists('pagelist_unqprfx_ext_shortcode') ) {
 			'authors' => $authors,
 			'child_of' => pagelist_unqprfx_norm_params($child_of),
 			'parent' => pagelist_unqprfx_norm_params($parent),
-			'exclude_tree' => pagelist_unqprfx_norm_params$exclude_tree),
+			'exclude_tree' => pagelist_unqprfx_norm_params($exclude_tree),
 			'number' => '', // $number - own counter
 			'offset' => 0, // $offset - own offset
 			'post_type' => $post_type,
