@@ -102,7 +102,7 @@ if ( !function_exists('subpages_unqprfx_shortcode') ) {
 			'depth'        => $depth,
 			'child_of'     => $post->ID,
 			'exclude'      => pagelist_unqprfx_norm_params($exclude),
-			'exclude_tree' => $exclude_tree,
+			'exclude_tree' => pagelist_unqprfx_norm_params($exclude_tree),
 			'include'      => pagelist_unqprfx_norm_params($include),
 			'title_li'     => $title_li,
 			'number'       => $number,
@@ -149,8 +149,8 @@ if ( !function_exists('siblings_unqprfx_shortcode') ) {
 			'depth'        => $depth,
 			'child_of'     => $post->post_parent,
 			'exclude'      => pagelist_unqprfx_norm_params($exclude),
-			'exclude_tree' => $exclude_tree,
-			'include'      => $include,
+			'exclude_tree' => pagelist_unqprfx_norm_params($exclude_tree),
+			'include'      => pagelist_unqprfx_norm_params($include),
 			'title_li'     => $title_li,
 			'number'       => $number,
 			'offset'       => $offset,
@@ -241,7 +241,7 @@ if ( !function_exists('pagelist_unqprfx_ext_shortcode') ) {
 			'authors' => $authors,
 			'child_of' => pagelist_unqprfx_norm_params($child_of),
 			'parent' => pagelist_unqprfx_norm_params($parent),
-			'exclude_tree' => $exclude_tree,
+			'exclude_tree' => pagelist_unqprfx_norm_params$exclude_tree),
 			'number' => '', // $number - own counter
 			'offset' => 0, // $offset - own offset
 			'post_type' => $post_type,
@@ -273,7 +273,7 @@ if ( !function_exists('pagelist_unqprfx_ext_shortcode') ) {
 			'authors' => $authors,
 			'child_of' => 0, // for showing all pages
 			'parent' => pagelist_unqprfx_norm_params($parent),
-			'exclude_tree' => $exclude_tree,
+			'exclude_tree' => pagelist_unqprfx_norm_params($exclude_tree),
 			'number' => '', // $number - own counter
 			'offset' => 0, // $offset - own offset
 			'post_type' => $post_type,
