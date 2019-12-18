@@ -4,7 +4,7 @@ Donate link: http://web-profile.net/donate/
 Tags: page, page-list, pagelist, sitemap, subpages, siblings
 Requires at least: 3.0
 Tested up to: 5.2
-Stable tag: 5.1
+Stable tag: 5.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -129,6 +129,10 @@ When you changed the plugin's code you should also change the plugin's version t
 2. [pagelist_ext] shortcode
 
 == Changelog ==
+
+= 5.2 =
+* added normalize params function to include and exclude_tree params (thanks to https://github.com/MrSwed )
+* execute shortcodes in meta tags (thanks to https://github.com/MrSwed )
 
 = 5.1 =
 * added columns feature
