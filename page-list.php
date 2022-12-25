@@ -3,13 +3,13 @@
 Plugin Name: Page-list
 Plugin URI: http://wordpress.org/plugins/page-list/
 Description: [pagelist], [subpages], [siblings] and [pagelist_ext] shortcodes
-Version: 5.2
+Version: 5.3
 Author: webvitaly
 Author URI: http://web-profile.net/wordpress/plugins/
 License: GPLv3
 */
 
-define('PAGE_LIST_PLUGIN_VERSION', '5.2');
+define('PAGE_LIST_PLUGIN_VERSION', '5.3');
 
 $pagelist_unq_settings = array(
 	'version' => PAGE_LIST_PLUGIN_VERSION,
@@ -79,7 +79,7 @@ if ( !function_exists('pagelist_unqprfx_shortcode') ) {
 
 		$return .= $pagelist_unq_settings['powered_by'];
 		if ($list_pages) {
-			$return .= '<ul class="page-list '.$class.'">'."\n".$list_pages."\n".'</ul>';
+			$return .= '<ul class="page-list '.esc_attr($class).'">'."\n".$list_pages."\n".'</ul>';
 		} else {
 			$return .= '<!-- no pages to show -->';
 		}
@@ -124,7 +124,7 @@ if ( !function_exists('subpages_unqprfx_shortcode') ) {
 
 		$return .= $pagelist_unq_settings['powered_by'];
 		if ($list_pages) {
-			$return .= '<ul class="page-list subpages-page-list '.$class.'">'."\n".$list_pages."\n".'</ul>';
+			$return .= '<ul class="page-list subpages-page-list '.esc_attr($class).'">'."\n".$list_pages."\n".'</ul>';
 		} else {
 			$return .= '<!-- no pages to show -->';
 		}
@@ -171,7 +171,7 @@ if ( !function_exists('siblings_unqprfx_shortcode') ) {
 
 		$return .= $pagelist_unq_settings['powered_by'];
 		if ($list_pages) {
-			$return .= '<ul class="page-list siblings-page-list '.$class.'">'."\n".$list_pages."\n".'</ul>';
+			$return .= '<ul class="page-list siblings-page-list '.esc_attr($class).'">'."\n".$list_pages."\n".'</ul>';
 		} else {
 			$return .= '<!-- no pages to show -->';
 		}
@@ -387,7 +387,7 @@ if ( !function_exists('pagelist_unqprfx_ext_shortcode') ) {
 		}
 		$return .= $pagelist_unq_settings['powered_by'];
 		if ($list_pages_html) {
-			$return .= '<div class="page-list page-list-ext '.$class.'">'."\n".$list_pages_html."\n".'</div>';
+			$return .= '<div class="page-list page-list-ext '.esc_attr($class).'">'."\n".$list_pages_html."\n".'</div>';
 		} else {
 			$return .= '<!-- no pages to show -->'; // this line will not work, because we show all pages if there is no pages to show
 		}
