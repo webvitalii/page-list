@@ -3,13 +3,13 @@
 Plugin Name: Page-list
 Plugin URI: http://wordpress.org/plugins/page-list/
 Description: [pagelist], [subpages], [siblings] and [pagelist_ext] shortcodes
-Version: 5.3
+Version: 5.4
 Author: webvitaly
 Author URI: http://web-profile.net/wordpress/plugins/
 License: GPLv3
 */
 
-define('PAGE_LIST_PLUGIN_VERSION', '5.3');
+define('PAGE_LIST_PLUGIN_VERSION', '5.4');
 
 $pagelist_unq_settings = array(
 	'version' => PAGE_LIST_PLUGIN_VERSION,
@@ -402,10 +402,12 @@ if ( !function_exists('pagelist_unqprfx_norm_params') ) {
 	function pagelist_unqprfx_norm_params( $str ) {
 		global $post;
 		$new_str = $str;
-		$new_str = str_replace('this', $post->ID, $new_str); // exclude this page
-		$new_str = str_replace('current', $post->ID, $new_str); // exclude current page
-		$new_str = str_replace('curent', $post->ID, $new_str); // exclude curent page with mistake
-		$new_str = str_replace('parent', $post->post_parent, $new_str); // exclude parent page
+		if(isset($post)) {
+			$new_str = str_replace('this', $post->ID, $new_str); // exclude this page
+			$new_str = str_replace('current', $post->ID, $new_str); // exclude current page
+			$new_str = str_replace('curent', $post->ID, $new_str); // exclude curent page with mistake
+			$new_str = str_replace('parent', $post->post_parent, $new_str); // exclude parent page
+		}
 		return $new_str;
 	}
 }
