@@ -3,13 +3,13 @@
 Plugin Name: Page-list
 Plugin URI: http://wordpress.org/plugins/page-list/
 Description: [pagelist], [subpages], [siblings] and [pagelist_ext] shortcodes
-Version: 5.5
+Version: 5.6
 Author: webvitaly
 Author URI: http://web-profile.net/wordpress/plugins/
 License: GPLv3
 */
 
-define('PAGE_LIST_PLUGIN_VERSION', '5.5');
+define('PAGE_LIST_PLUGIN_VERSION', '5.6');
 
 $pagelist_unq_settings = array(
 	'version' => PAGE_LIST_PLUGIN_VERSION,
@@ -100,7 +100,7 @@ if ( !function_exists('subpages_unqprfx_shortcode') ) {
 
 		$page_list_args = array(
 			'depth'        => $depth,
-			'child_of'     => $post->ID,
+			'child_of'     => isset($post->ID) ? $post->ID : 0,
 			'exclude'      => pagelist_unqprfx_norm_params($exclude),
 			'exclude_tree' => pagelist_unqprfx_norm_params($exclude_tree),
 			'include'      => pagelist_unqprfx_norm_params($include),
@@ -142,7 +142,7 @@ if ( !function_exists('siblings_unqprfx_shortcode') ) {
 		extract( shortcode_atts( $pagelist_unq_settings['page_list_defaults'], $atts ) );
 
 		if ( $exclude == 'current' || $exclude == 'this' ) {
-			$exclude = $post->ID;
+			$exclude = isset($post->ID) ? $post->ID : 0;
 		}
 
 		$page_list_args = array(
@@ -219,7 +219,7 @@ if ( !function_exists('pagelist_unqprfx_ext_shortcode') ) {
 		), $atts ) );
 
 		if ( $child_of == '' ) { // show subpages if child_of is empty
-			$child_of = $post->ID;
+			$child_of = isset($post->ID) ? $post->ID : 0;
 		}
 
 		$page_list_ext_args = array(
