@@ -3,13 +3,13 @@
 Plugin Name: Page-list
 Plugin URI: http://wordpress.org/plugins/page-list/
 Description: [pagelist], [subpages], [siblings] and [pagelist_ext] shortcodes
-Version: 5.4
+Version: 5.5
 Author: webvitaly
 Author URI: http://web-profile.net/wordpress/plugins/
 License: GPLv3
 */
 
-define('PAGE_LIST_PLUGIN_VERSION', '5.4');
+define('PAGE_LIST_PLUGIN_VERSION', '5.5');
 
 $pagelist_unq_settings = array(
 	'version' => PAGE_LIST_PLUGIN_VERSION,
@@ -147,7 +147,7 @@ if ( !function_exists('siblings_unqprfx_shortcode') ) {
 
 		$page_list_args = array(
 			'depth'        => $depth,
-			'child_of'     => $post->post_parent,
+			'child_of'     => isset($post->post_parent) ? $post->post_parent : 0,
 			'exclude'      => pagelist_unqprfx_norm_params($exclude),
 			'exclude_tree' => pagelist_unqprfx_norm_params($exclude_tree),
 			'include'      => pagelist_unqprfx_norm_params($include),
