@@ -3,13 +3,13 @@
 Plugin Name: Page-list
 Plugin URI: http://wordpress.org/plugins/page-list/
 Description: [pagelist], [subpages], [siblings] and [pagelist_ext] shortcodes
-Version: 5.6
+Version: 5.7
 Author: webvitaly
 Author URI: http://web-profile.net/wordpress/plugins/
 License: GPLv3
 */
 
-define('PAGE_LIST_PLUGIN_VERSION', '5.6');
+define('PAGE_LIST_PLUGIN_VERSION', '5.7');
 
 $pagelist_unq_settings = array(
 	'version' => PAGE_LIST_PLUGIN_VERSION,
@@ -218,6 +218,18 @@ if ( !function_exists('pagelist_unqprfx_ext_shortcode') ) {
 			'meta_template' => '%meta%'
 		), $atts ) );
 
+		// Sanitize and validate image_width
+		$image_width = absint($image_width);
+		if ($image_width === 0) {
+			$image_width = 150; // Set a default value if invalid input is provided
+		}
+
+		// Sanitize and validate image_height
+		$image_height = absint($image_height);
+		if ($image_height === 0) {
+			$image_height = 150; // Set a default value if invalid input is provided
+		}
+
 		if ( $child_of == '' ) { // show subpages if child_of is empty
 			$child_of = isset($post->ID) ? $post->ID : 0;
 		}
@@ -311,7 +323,7 @@ if ( !function_exists('pagelist_unqprfx_ext_shortcode') ) {
 
 								$image = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), array($image_width,$image_height) ); // get featured img; 'large'
 								$img_url = $image[0]; // get the src of the featured image
-								$list_pages_html .= '<img src="'.$img_url.'" width="'.$image_width.'" alt="'.esc_attr($page->post_title).'" />'; // not using height="'.$image_height.'" because images could be not square shaped and they will be stretched
+								$list_pages_html .= '<img src="'.$img_url.'" width="'.esc_attr($image_width).'" alt="'.esc_attr($page->post_title).'" />'; // not using height="'.$image_height.'" because images could be not square shaped and they will be stretched
 
 								$list_pages_html .= '</a></div> ';
 							} else {
@@ -319,7 +331,7 @@ if ( !function_exists('pagelist_unqprfx_ext_shortcode') ) {
 									$img_scr = pagelist_unqprfx_get_first_image( $page->post_content );
 									if ( !empty( $img_scr ) ) {
 										$list_pages_html .= '<div class="page-list-ext-image"><a href="'.$link.'" title="'.esc_attr($page->post_title).'">';
-										$list_pages_html .= '<img src="'.$img_scr.'" width="'.$image_width.'" alt="'.esc_attr($page->post_title).'" />'; // not using height="'.$image_height.'" because images could be not square shaped and they will be stretched
+										$list_pages_html .= '<img src="'.$img_scr.'" width="'.esc_attr($image_width).'" alt="'.esc_attr($page->post_title).'" />'; // not using height="'.$image_height.'" because images could be not square shaped and they will be stretched
 										$list_pages_html .= '</a></div> ';
 									}
 								}
