@@ -3,7 +3,7 @@ Contributors: webvitaly
 Donate link: http://web-profile.net/donate/
 Tags: page-list, pagelist, sitemap, subpages, siblings
 Requires at least: 3.0
-Tested up to: 6.6
+Tested up to: 6.8.1
 Stable tag: 5.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -12,7 +12,6 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 == Description ==
 
-* **[Advanced iFrame Pro](https://1.envato.market/KdRNz "Advanced iFrame Pro")**
 * **[Page-list](http://web-profile.net/wordpress/plugins/page-list/ "Plugin page")**
 * **[all Page-list params](http://wordpress.org/plugins/page-list/other_notes/ "Page-list params")**
 * **[Donate](http://web-profile.net/donate/ "Support the development")**
