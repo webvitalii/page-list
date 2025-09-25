@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.net/donate/
 Tags: page-list, pagelist, sitemap, subpages, siblings
 Requires at least: 3.0
-Tested up to: 6.8.1
-Stable tag: 5.7
+Tested up to: 6.8.2
+Stable tag: 5.8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -128,6 +128,9 @@ When you changed the plugin's code you should also change the plugin's version t
 2. [pagelist_ext] shortcode
 
 == Changelog ==
+
+= 5.8 =
+* Sanitized some attributes for [pagelist_ext] shortcode
 
 = 5.7 =
 * Sanitized image_width and image_height for [pagelist_ext] shortcode
