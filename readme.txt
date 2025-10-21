@@ -56,7 +56,8 @@ License URI: http://www.gnu.org/licenses/gpl.html
 * **link_before** - sets the text or html that precedes the link text inside link tag: `[pagelist link_before="<span>"]`; you may specify html tags only in the `HTML` tab in your Rich-text editor;
 * **link_after** - sets the text or html that follows the link text inside link tag: `[pagelist link_after="</span>"]`; you may specify html tags only in the `HTML` tab in your Rich-text editor;
 * **class** - the CSS class for list of pages: `[pagelist class="listclass"]`; by default the class is empty (class="");
-* columns - for splitting list of pages into columns: `[pagelist class="page-list-cols-2"]`; available classes: page-list-cols-2, page-list-cols-3, page-list-cols-4, page-list-cols-5; works in all modern browsers and IE10+; columns are responsive and become 1 column at less than 768px;
+* **columns** - for splitting list of pages into columns: `[pagelist class="page-list-cols-2"]`; available classes: page-list-cols-2, page-list-cols-3, page-list-cols-4, page-list-cols-5; works in all modern browsers and IE10+; columns are responsive and become 1 column at less than 768px;
+* **has_parent** - to display list only on if page has parent page `[siblings has_parent="1"]` or does not have parent page `[siblings has_parent="0"]` 
 
 More [info about params](http://codex.wordpress.org/Function_Reference/wp_list_pages#Parameters) for [pagelist], [subpages], [siblings].
 

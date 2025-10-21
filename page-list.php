@@ -34,7 +34,8 @@ $pagelist_unq_settings = array(
 		'link_after' => '',
 		'post_type' => 'page',
 		'post_status' => 'publish',
-		'class' => ''
+		'class' => '',
+		'has_parent' => -1
 	)
 );
 
@@ -170,7 +171,16 @@ if ( !function_exists('siblings_unqprfx_shortcode') ) {
 		$list_pages = wp_list_pages( $page_list_args );
 
 		$return .= $pagelist_unq_settings['powered_by'];
-		if ($list_pages) {
+		$parent_exists = isset($post) && !empty($post->post_parent);
+		$has_parent    = is_numeric($has_parent) ? (int) $has_parent : -1;
+		if (
+			$list_pages
+			&& (
+				$has_parent === -1
+				|| ($has_parent === 0 && !$parent_exists)
+				|| ($has_parent === 1 &&  $parent_exists)
+			)
+		) {
 			$return .= '<ul class="page-list siblings-page-list '.esc_attr($class).'">'."\n".$list_pages."\n".'</ul>';
 		} else {
 			$return .= '<!-- no pages to show -->';
