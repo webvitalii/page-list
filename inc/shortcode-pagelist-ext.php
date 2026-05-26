@@ -157,8 +157,11 @@ if ( !function_exists('pagelist_unqprfx_ext_shortcode') ) {
 		if ( $list_pages !== false && count( $list_pages ) > 0 ) {
 			foreach($list_pages as $page){
 				// Skip pages the current user is not permitted to read
-				// (Wordfence ticket 454582).
-				if ( ! current_user_can( 'read_post', $page->ID ) ) {
+				// (Wordfence ticket 454582). Only enforced for non-public
+				// statuses; published pages are visible to everyone and
+				// current_user_can( 'read_post', ... ) returns false for
+				// anonymous viewers, which would hide published content.
+				if ( $post_status !== 'publish' && ! current_user_can( 'read_post', $page->ID ) ) {
 					continue;
 				}
 				$count++;

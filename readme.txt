@@ -4,7 +4,7 @@ Donate link: http://web-profile.net/donate/
 Tags: page-list, pagelist, sitemap, subpages, siblings
 Requires at least: 3.0
 Tested up to: 7.0
-Stable tag: 6.1
+Stable tag: 6.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -128,6 +128,9 @@ When you changed the plugin's code you should also change the plugin's version t
 2. [pagelist_ext] shortcode
 
 == Changelog ==
+
+= 6.2 =
+* Fixed issue with published pages not showing up in lists
 
 = 6.1 =
 * Fixed BOM issue
