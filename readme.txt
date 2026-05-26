@@ -4,7 +4,7 @@ Donate link: http://web-profile.net/donate/
 Tags: page-list, pagelist, sitemap, subpages, siblings
 Requires at least: 3.0
 Tested up to: 7.0
-Stable tag: 6.0
+Stable tag: 6.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -128,6 +128,9 @@ When you changed the plugin's code you should also change the plugin's version t
 2. [pagelist_ext] shortcode
 
 == Changelog ==
+
+= 6.1 =
+* Fixed BOM issue
 
 = 6.0 =
 * Updated plugin structure
