@@ -3,7 +3,7 @@
 Plugin Name: Page-list
 Plugin URI: http://wordpress.org/plugins/page-list/
 Description: [pagelist], [subpages], [siblings] and [pagelist_ext] shortcodes
-Version: 6.2
+Version: 6.3
 Author: webvitaly
 Author URI: http://web-profile.net/wordpress/plugins/
 License: GPLv3
@@ -11,7 +11,7 @@ License: GPLv3
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define('PAGE_LIST_PLUGIN_VERSION', '6.2');
+define('PAGE_LIST_PLUGIN_VERSION', '6.3');
 define('PAGE_LIST_PLUGIN_FILE', __FILE__);
 
 $pagelist_unq_settings = array(
@@ -36,7 +36,6 @@ $pagelist_unq_settings = array(
 		'link_before' => '',
 		'link_after' => '',
 		'post_type' => 'page',
-		'post_status' => 'publish',
 		'class' => ''
 	)
 );

@@ -4,7 +4,7 @@ Donate link: http://web-profile.net/donate/
 Tags: page-list, pagelist, sitemap, subpages, siblings
 Requires at least: 3.0
 Tested up to: 7.0
-Stable tag: 6.2
+Stable tag: 6.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -47,7 +47,6 @@ License URI: http://www.gnu.org/licenses/gpl.html
 * **number** - sets the number of pages to display: `[pagelist number="10"]`; by default the number is unlimited (number="");
 * **offset** - the number of pages to pass over (or displace) before collecting the set of pages: `[pagelist offset="5"]`; by default there is no offset (offset="");
 * **post_type** - list associated with a certain hierarchical Post Type `[pagelist post_type="page"]`; by default: (post_type="page"); possible values: page, revision, Hierarchical Custom Post Types ('post' is not a Hierarchical Post Type);
-* **post_status** - a comma-separated list of all post status types: `[pagelist post_status="private"]`; by default: (post_status="publish"); possible values: publish, private, draft;
 * **meta_key** and **meta_value** - only include the pages that have this Custom Field Key and this Custom Field Value: `[pagelist meta_key="metakey" meta_value="metaval"]`;
 * **show_date** - display creation or last modified date next to each Page: `[pagelist show_date="created"]`; possible values: created, modified, updated;
 * **date_format** - the format of the Page date set by the show_date parameter: `[pagelist date_format="l, F j, Y"]`; by default use the date format configured in your WordPress options;
@@ -83,7 +82,6 @@ More [info about params](http://codex.wordpress.org/Function_Reference/wp_list_p
 * **number** - sets the number of pages to display: `[pagelist_ext number="10"]`; by default the number is unlimited (number="");
 * **offset** - the number of pages to pass over (or displace) before collecting the set of pages: `[pagelist_ext offset="5"]`; by default there is no offset (offset="");
 * **post_type** - list associated with a certain hierarchical Post Type `[pagelist_ext post_type="page"]`; by default: (post_type="page"); possible values: page, revision, Hierarchical Custom Post Types ('post' is not a Hierarchical Post Type);
-* **post_status** - a comma-separated list of all post status types: `[pagelist_ext post_status="private"]`; by default: (post_status="publish"); possible values: publish, private, draft;
 * **class** - the CSS class for list of pages: `[pagelist_ext class="listclass"]`; by default the class is empty (class="");
 * **strip_tags** - strip tags or not: `[pagelist_ext strip_tags="0"]`; by default the tags are stripped (strip_tags="1");
 * **strip_shortcodes** - strip registered shortcodes or not: `[pagelist_ext strip_shortcodes="0"]`; by default shortcodes are stripped (strip_shortcodes="1") and all registered shortcodes are removed;
@@ -128,6 +126,9 @@ When you changed the plugin's code you should also change the plugin's version t
 2. [pagelist_ext] shortcode
 
 == Changelog ==
+
+= 6.3 =
+* Removed post_status parameter from shortcodes and restricted meta key output to harden against unauthorized content disclosure
 
 = 6.2 =
 * Fixed issue with published pages not showing up in lists

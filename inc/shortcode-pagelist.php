@@ -27,8 +27,7 @@ if ( !function_exists('pagelist_unqprfx_shortcode') ) {
 			'sort_order'   => $sort_order,
 			'link_before'  => esc_html($link_before),
 			'link_after'   => esc_html($link_after),
-			'post_type'    => $post_type,
-			'post_status'  => $post_status
+			'post_type'    => $post_type
 		);
 		$list_pages = wp_list_pages( $page_list_args );
 

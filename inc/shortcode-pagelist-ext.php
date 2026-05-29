@@ -29,7 +29,6 @@ if ( !function_exists('pagelist_unqprfx_ext_shortcode') ) {
 			'number' => '',
 			'offset' => 0,
 			'post_type' => 'page',
-			'post_status' => 'publish',
 			'class' => '',
 			'strip_tags' => 1,
 			'strip_shortcodes' => 1,
@@ -55,30 +54,26 @@ if ( !function_exists('pagelist_unqprfx_ext_shortcode') ) {
 			$child_of = isset($post->ID) ? $post->ID : 0;
 		}
 
-		// --- Security hardening (CVE: Wordfence ticket 454582) ---
+		// --- Security hardening (Wordfence ticket 454582) ---
+		// post_status is no longer accepted from the shortcode: only published
+		// content is ever listed. This removes the unauthorized-disclosure
+		// vector for private/draft pages entirely.
+		$post_status = 'publish';
 		// Restrict post_type to public post types; fall back to 'page' otherwise.
 		$pagelist_ext_allowed_types = get_post_types( array( 'public' => true ) );
 		if ( ! is_array( $pagelist_ext_allowed_types ) || ! in_array( $post_type, $pagelist_ext_allowed_types, true ) ) {
 			$post_type = 'page';
 		}
-		// Restrict post_status: only allow non-public statuses if the current
-		// user has the capability to read those posts for the requested type.
-		$pagelist_ext_requested_status = $post_status;
-		$post_status = 'publish';
-		$pagelist_ext_pt_obj = get_post_type_object( $post_type );
-		if ( $pagelist_ext_requested_status === 'private'
-			&& $pagelist_ext_pt_obj
-			&& current_user_can( $pagelist_ext_pt_obj->cap->read_private_posts ) ) {
-			$post_status = 'private';
-		} elseif ( in_array( $pagelist_ext_requested_status, array( 'draft', 'pending', 'future', 'trash' ), true )
-			&& $pagelist_ext_pt_obj
-			&& current_user_can( $pagelist_ext_pt_obj->cap->edit_others_posts ) ) {
-			$post_status = $pagelist_ext_requested_status;
-		}
-		// Disallow protected (underscore-prefixed) meta keys unless the user
-		// can edit others' posts. Prevents disclosure of arbitrary post meta.
-		if ( $show_meta_key !== '' && is_protected_meta( $show_meta_key, 'post' ) && ! current_user_can( 'edit_others_posts' ) ) {
-			$show_meta_key = '';
+		// Restrict show_meta_key to prevent disclosure of arbitrary or protected
+		// post meta. Users who cannot edit posts may only read meta keys that are
+		// registered as publicly visible (show_in_rest) and are not protected.
+		if ( $show_meta_key !== '' && ! current_user_can( 'edit_posts' ) ) {
+			$pagelist_ext_registered_meta = get_registered_meta_keys( 'post' );
+			if ( is_protected_meta( $show_meta_key, 'post' )
+				|| ! isset( $pagelist_ext_registered_meta[ $show_meta_key ] )
+				|| empty( $pagelist_ext_registered_meta[ $show_meta_key ]['show_in_rest'] ) ) {
+				$show_meta_key = '';
+			}
 		}
 
 		$page_list_ext_args = array(
@@ -156,14 +151,6 @@ if ( !function_exists('pagelist_unqprfx_ext_shortcode') ) {
 		$offset_count = 0;
 		if ( $list_pages !== false && count( $list_pages ) > 0 ) {
 			foreach($list_pages as $page){
-				// Skip pages the current user is not permitted to read
-				// (Wordfence ticket 454582). Only enforced for non-public
-				// statuses; published pages are visible to everyone and
-				// current_user_can( 'read_post', ... ) returns false for
-				// anonymous viewers, which would hide published content.
-				if ( $post_status !== 'publish' && ! current_user_can( 'read_post', $page->ID ) ) {
-					continue;
-				}
 				$count++;
 				$offset_count++;
 				if ( !empty( $offset ) && is_numeric( $offset ) && $offset_count <= $offset ) {
